@@ -15,7 +15,7 @@ const Signup = ({ navigation }) => {
       <Button
         label="Continue with email"
         onPress={() => {
-          navigation.navigate("EnterEmail");
+          navigation.navigate("ProfileDetails2");
         }}
         style={{ marginTop: 32 }}
       />

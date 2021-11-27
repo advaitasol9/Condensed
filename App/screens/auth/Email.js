@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { View, Text, TextInput, StyleSheet } from "react-native";
 import { moderateScale, scale, verticalScale } from "../../configs/size";
-import Button from "../../components/Button"
+import Button from "../../components/Button";
 
-const Email = () => {
+const Email = ({ navigation }) => {
   const [value, setValue] = useState();
   return (
     <View style={styles.container}>
@@ -18,7 +18,13 @@ const Email = () => {
         onChangeText={setValue}
         style={styles.input}
       />
-      <Button label='Continue' onPress={() => {}} style={{marginTop: verticalScale(64)}} />
+      <Button
+        label="Continue"
+        onPress={() => {
+          navigation.navigate("EnterPassword");
+        }}
+        style={{ marginTop: verticalScale(64) }}
+      />
     </View>
   );
 };
@@ -29,19 +35,19 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingTop: verticalScale(128),
     backgroundColor: "#E5E5E5",
-    paddingHorizontal: scale(40)
+    paddingHorizontal: scale(40),
   },
   label: {
     fontSize: moderateScale(34),
     fontWeight: "700",
     lineHeight: verticalScale(51),
-    alignSelf: 'flex-start'
+    alignSelf: "flex-start",
   },
   details: {
     fontSize: moderateScale(14),
     fontWeight: "700",
     lineHeight: verticalScale(21),
-    color: 'rgba(0, 0, 0, 0.7)',
+    color: "rgba(0, 0, 0, 0.7)",
   },
   input: {
     width: scale(295),
@@ -50,7 +56,7 @@ const styles = StyleSheet.create({
     borderColor: "#cfcbd4",
     borderWidth: 1,
     marginTop: verticalScale(32),
-    paddingLeft: scale(17)
+    paddingLeft: scale(17),
   },
 });
 
