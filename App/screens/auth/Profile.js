@@ -161,7 +161,9 @@ const ProfileDetails2 = ({ navigation }) => {
 
         <Button
           label="Continue"
-          onPress={() => {}}
+          onPress={() => {
+            navigation.navigate("EnableNotifs");
+          }}
           style={{ marginTop: verticalScale(35) }}
         />
       </ScrollView>

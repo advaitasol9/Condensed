@@ -1,11 +1,11 @@
 import React from "react";
-import { View, Image, Text, StyleSheet } from "react-native";
+import { SafeAreaView, Image, Text, StyleSheet } from "react-native";
 import Button from "../../components/Button";
 import { verticalScale, scale, moderateScale } from "../../configs/size";
 
 const Signup = ({ navigation }) => {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Image
         source={require("../../../assets/signupLogo.png")}
         height={verticalScale(100)}
@@ -15,11 +15,11 @@ const Signup = ({ navigation }) => {
       <Button
         label="Continue with email"
         onPress={() => {
-          navigation.navigate("ProfileDetails2");
+          navigation.navigate("EnterEmail");
         }}
         style={{ marginTop: 32 }}
       />
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -29,6 +29,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "#E5E5E5",
     paddingTop: verticalScale(128),
+    backgroundColor: "#ffffff",
   },
   msg: {
     fontSize: moderateScale(18),

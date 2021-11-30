@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet, TextInput } from "react-native";
+import { View, Text, StyleSheet, TextInput, SafeAreaView } from "react-native";
 
 import Button from "../../components/Button";
 import { moderateScale, scale, verticalScale } from "../../configs/size";
@@ -8,7 +8,7 @@ import Back from "../../components/HeaderBackIcon";
 const Password = ({ navigation }) => {
   const [pwd, setPwd] = useState();
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Back
         onPress={() => {
           navigation.goBack();
@@ -24,17 +24,19 @@ const Password = ({ navigation }) => {
       />
       <Button
         label="Continue"
-        onPress={() => {}}
+        onPress={() => {
+          navigation.navigate("ProfileDetails1");
+        }}
         style={{ marginTop: verticalScale(64) }}
       />
-    </View>
+    </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#E5E5E5",
+    backgroundColor: "#ffffff",
     paddingTop: verticalScale(128),
     paddingLeft: scale(40),
   },

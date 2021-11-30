@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, StyleSheet } from "react-native";
+import { View, Text, TextInput, StyleSheet, SafeAreaView } from "react-native";
 import { moderateScale, scale, verticalScale } from "../../configs/size";
 import Button from "../../components/Button";
 
 const Email = ({ navigation }) => {
   const [value, setValue] = useState();
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Text style={styles.label}>My email</Text>
       <Text style={styles.details}>
         Please enter your valid email. We will send you a 4-digit code to verify
@@ -21,11 +21,11 @@ const Email = ({ navigation }) => {
       <Button
         label="Continue"
         onPress={() => {
-          navigation.navigate("EnterPassword");
+          navigation.navigate("EnterCode");
         }}
         style={{ marginTop: verticalScale(64) }}
       />
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     paddingTop: verticalScale(128),
-    backgroundColor: "#E5E5E5",
+    backgroundColor: "#ffffff",
     paddingHorizontal: scale(40),
   },
   label: {
